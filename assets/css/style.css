@@ -158,6 +158,19 @@ html { font-family: var(--ff-poppins); }
 body { background: var(--smoky-black); }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+article {
+  scroll-margin-top: 80px; /* offset for navbar height */
+}
+
+
 
 
 
@@ -208,12 +221,12 @@ article {
 
 .icon-box ion-icon { --ionicon-stroke-width: 35px; }
 
-article { display: none; }
+article { display: block; }
 
-article.active {
+/* article.active {
   display: block;
   animation: fade 0.5s ease backwards;
-}
+} */
 
 @keyframes fade {
   0% { opacity: 0; }
@@ -1880,3 +1893,99 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+
+
+
+/* === Single-page layout overrides === */
+
+
+article {
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  min-height: auto !important;
+  height: auto !important;
+  margin: 25px 0 !important;
+  transform: none !important;
+}
+
+
+
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  border-radius: 0 0 12px 12px !important;
+  background: hsla(240, 1%, 17%, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 1000 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+
+
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+article:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.navbar {
+  margin-bottom: 20px !important; 
+}
+
+article:first-of-type {
+  scroll-margin-top: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === FIX: prevent first article from hiding under fixed navbar === */
+
+/* Declare the navbar height once for reuse */
+:root {
+  --navbar-height: 80px; /* adjust based on your actual navbar height */
+}
+
+/* Push main content down by navbar height */
+main {
+  padding-top: var(--navbar-height) !important;
+}
+
+/* Keep sidebar aligned properly */
+.sidebar {
+  padding-top: calc(var(--navbar-height) + 20px) !important;
+}
+
+/* Ensure first article aligns cleanly after navbar */
+article:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+
