@@ -418,11 +418,11 @@ main {
 .contact-title {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 2px;
 }
 
-.contact-info :is(.contact-link, time, address) {
+.contact-info :is(.contact-link, time, address, a) {
   color: var(--white-2);
   font-size: var(--fs-7);
 }
@@ -1835,7 +1835,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { flex-direction: column; }
 
-  .avatar-box img { width: 150px; }
+  .avatar-box img { width: 150px; border-radius:30%;}
 
   .info-content .name {
     white-space: nowrap;
