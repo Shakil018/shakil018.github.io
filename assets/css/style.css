@@ -2018,3 +2018,11 @@ article:first-of-type {
 
 
 
+.doi,
+.doi a {
+  display: inline !important;
+  white-space: nowrap;
+}
+
+
+
