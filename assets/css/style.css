@@ -2025,4 +2025,8 @@ article:first-of-type {
 }
 
 
+/* 
 
+.timeline-item:not(:last-child) {
+  margin-bottom: 100px;
+} */
